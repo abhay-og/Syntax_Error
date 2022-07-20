@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Screenshot_9.png" type="Texture" id=1]
+[ext_resource path="res://r2r.png" type="Texture" id=2]
+[ext_resource path="res://photu2.png" type="Texture" id=3]
+
+[node name="TextureRect" type="TextureRect"]
+anchor_right = 0.741
+anchor_bottom = 0.779
+margin_right = 5.29285
+margin_bottom = 7.21497
+rect_scale = Vector2( 1.00502, 1.07843 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R2r" type="Sprite" parent="."]
+position = Vector2( 619, 60.5 )
+scale = Vector2( 0.88961, 0.836957 )
+texture = ExtResource( 2 )
+
+[node name="Screenshot9" type="Sprite" parent="."]
+position = Vector2( 640.784, 161.346 )
+scale = Vector2( 0.995006, 0.927274 )
+texture = ExtResource( 1 )

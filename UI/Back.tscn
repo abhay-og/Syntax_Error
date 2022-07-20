@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Back.gd" type="Script" id=1]
+
+[node name="Back" type="Button"]
+margin_left = 47.0
+margin_top = 53.0
+margin_right = 205.0
+margin_bottom = 185.0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

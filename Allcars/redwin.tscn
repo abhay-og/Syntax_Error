@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://CarAssets/Carspic/Cars/Red Wins1.png" type="Texture" id=1]
+
+[node name="redwin" type="Node2D"]
+
+[node name="RedWins1" type="Sprite" parent="."]
+position = Vector2( 796, 421 )
+scale = Vector2( 0.320626, 0.295745 )
+texture = ExtResource( 1 )

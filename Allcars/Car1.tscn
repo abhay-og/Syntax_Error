@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://CarAssets/2d_race_cars/cars/pitstop_car_4.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends KinematicBody2D
+
+var wheel_base=70
+var steer_angle=1
+var velocity=Vector2.ZERO
+var steer_direction
+
+var engine_power=300
+var acceleration=Vector2.ZERO
+
+var friction=-0.18
+var drag=-0.001
+
+var brake=-450
+var max_rev_vel=250
+
+var slip_speed=400
+var traction_fast=0.1
+var traction_slow=0.7
+
+func _physics_process(delta):
+	acceleration=Vector2.ZERO
+	get_input()
+	apply_friction()
+	calculate_steering(delta)
+	velocity+=acceleration*delta
+	velocity=move_and_slide(velocity)
+
+func apply_friction():
+	if velocity.length()<5:
+		velocity=Vector2.ZERO
+	var friction_force=velocity*friction
+	var drag_force=velocity*velocity.length()*drag
+	if velocity.length()<100:
+		friction_force*=3
+	acceleration += drag_force+friction_force
+
+func get_input():
+	var turn=0
+	if Input.is_action_pressed(\"car1_right\"):
+		turn+=1
+	if Input.is_action_pressed(\"car1_left\"):
+		turn-=1
+	steer_direction=turn*steer_angle
+	if Input.is_action_pressed(\"accelerate1\"):
+		acceleration=transform.x*engine_power
+	if Input.is_action_pressed(\"brake1\"):
+		acceleration=transform.x*brake
+
+func calculate_steering(delta):
+	var rear_wheel=position-transform.x*wheel_base/2.0
+	var front_wheel=position+transform.x*wheel_base/2.0
+	rear_wheel+=velocity*delta
+	front_wheel+= velocity.rotated(steer_direction)*delta
+	var traction=traction_slow
+	if velocity.length()>slip_speed:
+		traction=traction_fast
+	var gap = (front_wheel - rear_wheel).normalized()
+	var prod=gap.dot(velocity.normalized())
+	if(prod>0):
+		velocity = velocity.linear_interpolate(gap*velocity.length(),traction)
+	if(prod<0):
+		velocity = -gap*min(velocity.length(),max_rev_vel)
+	rotation=gap.angle()
+
+	
+
+
+
+
+
+
+
+
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35.25, 20 )
+
+[node name="Car1" type="KinematicBody2D"]
+position = Vector2( 319, 233 )
+collision_layer = 4
+collision_mask = 13
+script = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -27.25, 0 )
+shape = SubResource( 1 )
+
+[node name="PitstopCar4" type="Sprite" parent="CollisionShape2D"]
+rotation = -1.5708
+scale = Vector2( 0.09, 0.07 )
+texture = ExtResource( 1 )

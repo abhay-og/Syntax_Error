@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alex-productions-racing-sport-gaming-racing.mp3-c116d7796dbee6831b6136aaf1ebe6ff.mp3str"
+
+[deps]
+
+source_file="res://alex-productions-racing-sport-gaming-racing.mp3"
+dest_files=[ "res://.import/alex-productions-racing-sport-gaming-racing.mp3-c116d7796dbee6831b6136aaf1ebe6ff.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
