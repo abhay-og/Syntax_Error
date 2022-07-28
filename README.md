@@ -1,5 +1,5 @@
-![opening2](ht![Controls](https://user-images.githubusercontent.com/99145719/181615261-ea501f34-8e20-4118-b921-69e5d6424393.png)
-tps://user-images.githubusercontent.com/99145719/181615230-2c0714f3-4057-47db-a669-de3c59606b65.png)
+![opening2](https://user-images.githubusercontent.com/99145719/181615522-5025f67f-1014-4e7a-9e85-43aa2a05defc.png)
+![Controls](https://user-images.githubusercontent.com/99145719/181615594-9a5765dd-bb55-4474-9239-898afed29b30.png)
 ![Race_b](https://user-images.githubusercontent.com/99145719/181615292-f56516d3-6054-42c9-a2e6-b9e46629222a.png)
 ![Race_f](https://user-images.githubusercontent.com/99145719/181615312-f6432ac0-8641-4661-92a9-09781b73acc5.png)
 ![Result](https://user-images.githubusercontent.com/99145719/181615336-87e19fb4-fb86-4752-be4b-9716346d867e.png)
